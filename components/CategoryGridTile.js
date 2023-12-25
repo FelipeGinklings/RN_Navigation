@@ -1,5 +1,11 @@
 import { StyleSheet, Text, View, Pressable, Platform } from 'react-native';
-
+/**
+ * Renders a grid tile for a category.
+ *
+ * @param {string} title - The title of the category.
+ * @param {string} color - The background color of the tile.
+ * @returns {JSX.Element} - The rendered grid tile.
+ */
 const CategoryGridTile = ({ title, color }) => {
 	return (
 		<View style={[styles.gridItem, { backgroundColor: color }]}>
