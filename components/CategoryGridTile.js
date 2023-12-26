@@ -1,12 +1,9 @@
 import { StyleSheet, Text, View, Pressable, Platform } from 'react-native';
-/**
- * Renders a grid tile for a category.
- *
- * @param {string} title - The title of the category.
- * @param {string} color - The background color of the tile.
- * @returns {JSX.Element} - The rendered grid tile.
- */
+// import { useNavigation } from '@react-navigation/native'
+
 const CategoryGridTile = ({ title, color, onPress }) => {
+  // const navigation = useNavigation();
+
 	return (
 		<View style={[styles.gridItem, { backgroundColor: color }]}>
 			<Pressable
