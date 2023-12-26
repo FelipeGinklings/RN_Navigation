@@ -4,15 +4,16 @@ import CategoryGridTile from '../components/CategoryGridTile';
 
 const CategoriesScreen = ({ navigation }) => {
 	const renderCategoryItem = (itemData) => {
-		const onPressHandler = () => {
-			navigation.navigate('MealsOverview');
+
+		const pressHandler = () => {
+			navigation.navigate('MealsOverview', {categoryId: itemData.item.id});
 		};
 
 		return (
 			<CategoryGridTile
 				title={itemData.item.title}
 				color={itemData.item.color}
-				onPress={onPressHandler}
+				onPress={pressHandler}
 			/>
 		);
 	};

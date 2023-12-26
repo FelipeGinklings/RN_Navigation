@@ -7,25 +7,16 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 // Intern Components
 import CategoriesScreen from './screens/CategoriesScreen';
-import MealsOverViewScreen from './screens/MealsOverViewScreen';
+import MealsOverviewScreen from './screens/MealsOverviewScreen';
 
 const Stack = createNativeStackNavigator();
 
-/**
- * Renders the main application component.
- *
- * @returns {JSX.Element} The rendered application component.
- */
 const App = () => {
 	return (
 		<>
-			{/* Renders the status bar */}
 			<StatusBar style="dark" />
-			{/* Renders the navigation container */}
 			<NavigationContainer>
-				{/* Renders the stack navigator */}
 				<Stack.Navigator>
-					{/* Renders the screen for meals categories */}
 					<Stack.Screen
 						name="Categories"
 						component={CategoriesScreen}
@@ -33,8 +24,7 @@ const App = () => {
 					/>
 					<Stack.Screen
 						name="MealsOverview"
-						component={MealsOverViewScreen}
-						title
+						component={MealsOverviewScreen}
 					/>
 				</Stack.Navigator>
 			</NavigationContainer>

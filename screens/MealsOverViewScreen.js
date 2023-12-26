@@ -1,15 +1,20 @@
 import { StyleSheet, Text, View } from 'react-native';
+// import { useRoute } from '@react-navigation/native';
+
 import { MEALS } from '../data/dummy-data';
 
-const MealsOverViewScreen = () => {
+const MealsOverviewScreen = ({ route }) => {
+	// const route = useRoute();
+	const catId = route.params.categoryId;
+
 	return (
 		<View style={styles.container}>
-			<Text>Meals Overview Screen</Text>
+			<Text>Meals Overview Screen {catId}</Text>
 		</View>
 	);
 };
 
-export default MealsOverViewScreen;
+export default MealsOverviewScreen;
 
 const styles = StyleSheet.create({
 	container: {
