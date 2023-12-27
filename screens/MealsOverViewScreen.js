@@ -20,14 +20,18 @@ const MealsOverviewScreen = ({ route, navigation }) => {
 
 		navigation.setOptions({
 			title: categoryTitle,
-      headerTitleAlign: 'center',
+			headerTitleAlign: 'center',
 		});
 	}, [catId, navigation]);
 
 	const renderMealItem = (itemData) => {
 		const item = itemData.item;
+		// const pressHandler = () => {
+		// 	navigation.navigate('Details', { mealId: item });
+		// };
 
 		const mealItemProps = {
+      id: item.id,
 			title: item.title,
 			imageUrl: item.imageUrl,
 			duration: item.duration,
