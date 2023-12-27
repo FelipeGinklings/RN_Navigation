@@ -1,13 +1,36 @@
 // import { useRoute } from '@react-navigation/native';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Image } from 'react-native';
 
-const MealDetailScreen = (route) => {
-	// const route = useRoute();
-  const mealId = route.params.mealId;
+import { MEALS } from '../data/dummy-data';
+import MealDetails from '../components/MealDetails';
+
+const MealDetailScreen = ({ route }) => {
+	const mealId = route.params.mealId;
+
+	const selectedMeal = MEALS.find((meal) => meal.id === mealId);
+
+	const mealDetailsProps = {
+		duration: selectedMeal.duration,
+		complexity: selectedMeal.complexity,
+		affordability: selectedMeal.affordability,
+	};
 
 	return (
 		<View>
-			<Text>This is the Meal Detail screen! ID: {mealId}</Text>
+			<Image source={{ uri: selectedMeal.imageUrl }} />
+			<Text>{selectedMeal.title}</Text>
+			<View>
+				<MealDetails {...mealDetailsProps} />
+			</View>
+
+			<Text>Ingredients</Text>
+			{selectedMeal.ingredients.map((ingredient) => (
+				<Text key={ingredient}>{ingredient}</Text>
+			))}
+			<Text>Steps</Text>
+			{selectedMeal.steps.map((steps) => (
+				<Text key={steps}>{steps}</Text>
+			))}
 		</View>
 	);
 };
