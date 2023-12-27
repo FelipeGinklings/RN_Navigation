@@ -16,11 +16,22 @@ const App = () => {
 		<>
 			<StatusBar style="dark" />
 			<NavigationContainer>
-				<Stack.Navigator>
+				<Stack.Navigator
+					screenOptions={{
+						headerStyle: {
+							backgroundColor: '#351401',
+						},
+						headerTintColor: 'white',
+						contentStyle: { backgroundColor: '#3f2f25' },
+					}}
+				>
 					<Stack.Screen
 						name="Categories"
 						component={CategoriesScreen}
-						title="Meal Categories"
+						title="All Categories"
+						options={{
+							title: 'Meals Categories',
+						}}
 					/>
 					<Stack.Screen
 						name="MealsOverview"
@@ -34,8 +45,4 @@ const App = () => {
 
 export default App;
 
-const styles = StyleSheet.create({
-	container: {
-    radius
-  },
-});
+const styles = StyleSheet.create({});
