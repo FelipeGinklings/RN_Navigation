@@ -1,15 +1,39 @@
 // import { useRoute } from '@react-navigation/native';
+import { useLayoutEffect, useState } from 'react';
 import { StyleSheet, Text, View, Image, ScrollView } from 'react-native';
 
 import { MEALS } from '../data/dummy-data';
 import MealDetails from '../components/MealDetails';
 import Subtitle from '../components/MealDetail/Subtitle';
 import List from '../components/MealDetail/List';
+import IconButton from '../components/IconButton';
 
-const MealDetailScreen = ({ route }) => {
+const MealDetailScreen = ({ route, navigation }) => {
 	const mealId = route.params.mealId;
+	const [buttonColor, setButtonColor] = useState('white');
 
 	const selectedMeal = MEALS.find((meal) => meal.id === mealId);
+
+	// const headerButtonPressHandler = () => {
+	//   console.log('Pressed!')
+	// };
+	const headerButtonPressHandler = () => {
+		setButtonColor((prev) => (prev === 'white' ? '#e2b497' : 'white'));
+	};
+
+	useLayoutEffect(() => {
+		navigation.setOptions({
+			headerRight: () => {
+				return (
+					<IconButton
+						onPress={headerButtonPressHandler}
+						icon="star"
+						buttonColor={buttonColor}
+					/>
+				);
+			},
+		});
+	}, [navigation, headerButtonPressHandler, buttonColor]);
 
 	const mealDetailsProps = {
 		duration: selectedMeal.duration,
@@ -43,9 +67,9 @@ const MealDetailScreen = ({ route }) => {
 export default MealDetailScreen;
 
 const styles = StyleSheet.create({
-  rootContainer: {
-    marginBottom: 24,
-  },
+	rootContainer: {
+		marginBottom: 24,
+	},
 	image: {
 		width: '100%',
 		height: 280,
@@ -57,9 +81,9 @@ const styles = StyleSheet.create({
 		textAlign: 'center',
 		color: 'white',
 	},
-  listOutterContainer: {
-    alignItems: 'center',
-  },
+	listOutterContainer: {
+		alignItems: 'center',
+	},
 	listContainer: {
 		width: '80%',
 	},

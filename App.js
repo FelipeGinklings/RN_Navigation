@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Button} from 'react-native';
 
 // Extra components
 import { NavigationContainer } from '@react-navigation/native';
@@ -48,6 +48,11 @@ const App = () => {
 					<Stack.Screen
 						name="MealDetail"
 						component={MealDetailScreen}
+            options={{
+              headerRight: () => {
+                return <Button title='Save'/>
+              }
+            }}
 					/>
 				</Stack.Navigator>
 			</NavigationContainer>
