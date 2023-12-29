@@ -24,6 +24,7 @@ const App = () => {
 						},
 						headerTintColor: 'white',
 						contentStyle: { backgroundColor: '#3f2f25' },
+							headerTitleAlign: 'center',
 					}}
 				>
 					<Stack.Screen
@@ -32,7 +33,6 @@ const App = () => {
 						title="All Categories"
 						options={{
 							title: 'Meals Categories',
-							headerTitleAlign: 'center',
 						}}
 					/>
 					<Stack.Screen
