@@ -1,7 +1,7 @@
-// import { useRoute } from '@react-navigation/native';
 import { useLayoutEffect, useState } from 'react';
 import { StyleSheet, Text, View, Image, ScrollView } from 'react-native';
 
+// Own components
 import { MEALS } from '../data/dummy-data';
 import MealDetails from '../components/MealDetails';
 import Subtitle from '../components/MealDetail/Subtitle';
@@ -10,13 +10,12 @@ import IconButton from '../components/IconButton';
 
 const MealDetailScreen = ({ route, navigation }) => {
 	const mealId = route.params.mealId;
+  // Changing the color when pressed
 	const [buttonColor, setButtonColor] = useState('white');
 
 	const selectedMeal = MEALS.find((meal) => meal.id === mealId);
 
-	// const headerButtonPressHandler = () => {
-	//   console.log('Pressed!')
-	// };
+  // IconHandler
 	const headerButtonPressHandler = () => {
 		setButtonColor((prev) => (prev === 'white' ? '#e2b497' : 'white'));
 	};
@@ -25,6 +24,7 @@ const MealDetailScreen = ({ route, navigation }) => {
 		navigation.setOptions({
 			headerRight: () => {
 				return (
+          // IconButton
 					<IconButton
 						onPress={headerButtonPressHandler}
 						icon="star"

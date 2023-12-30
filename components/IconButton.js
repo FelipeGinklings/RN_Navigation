@@ -1,3 +1,4 @@
+// Importing Ionicons
 import { StyleSheet, Pressable } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
