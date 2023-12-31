@@ -2,7 +2,7 @@ import { StyleSheet, Text, View, Pressable, Platform } from 'react-native';
 // import { useNavigation } from '@react-navigation/native'
 
 const CategoryGridTile = ({ title, color, onPress }) => {
-  // const navigation = useNavigation();
+	// const navigation = useNavigation();
 
 	return (
 		<View style={[styles.gridItem, { backgroundColor: color }]}>
@@ -12,7 +12,7 @@ const CategoryGridTile = ({ title, color, onPress }) => {
 					styles.button,
 					pressed ? styles.buttonPressed : null,
 				]}
-        onPress={onPress}
+				onPress={onPress}
 			>
 				<View style={styles.innerContainer}>
 					<Text style={styles.title}>{title}</Text>

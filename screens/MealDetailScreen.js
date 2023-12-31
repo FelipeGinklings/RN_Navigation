@@ -37,7 +37,7 @@ const MealDetailScreen = ({ route, navigation }) => {
 					// IconButton
 					<IconButton
 						icon={mealIsFavorite ? 'star' : 'star-outline'}
-            color="white"
+						color="white"
 						onPress={changeFavoriteStatusHandler}
 					/>
 				);
