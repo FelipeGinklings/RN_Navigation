@@ -1,5 +1,5 @@
 import { StyleSheet, Text, View } from 'react-native';
-import { useContext } from 'react';
+// import { useContext } from 'react';
 
 // Inner Components
 import MealsList from '../components/MealsList/MealsList';
@@ -13,9 +13,9 @@ const FavoritesScreen = () => {
 	// const favoriteMeals = MEALS.filter((meal) =>
 	// 	favoriteMealsCtx.ids.includes(meal.id)
 	// );
-  const favoriteMealsIds = useSelector((state) => state.favoriteMeals.ids);
+	const favoriteMealsIds = useSelector((state) => state.favoriteMeals.ids);
 	const favoriteMeals = MEALS.filter((meal) =>
-  favoriteMealsIds.includes(meal.id)
+		favoriteMealsIds.includes(meal.id)
 	);
 
 	if (favoriteMeals.length === 0) {
